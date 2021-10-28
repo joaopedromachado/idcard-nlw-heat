@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+
+/* Variáveis: */
+:root {
+  --body-color: #121214;
+  --container-color: #101015;
+  --color-font: hsl(240, 9%, 89%);
+  --gradient-color: linear-gradient(104.3deg, #FF008E 0.48%, #FFCD1E 100%);
+  --font-family: "Poppins", sans-serif;
+}
+
+/* Reset: */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a{
+  text-decoration: none;
+  color: #C4C4CC;
+}
+
+/* Layout: */
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: var(--body-color);
+  font-family: var(--font-family);
+  color: var(--color-font);
+  font-weight: 400;
+}
+
+main {
+  width: fit-content;
+  margin: auto;
+  position: absolute;
+  top: 5rem;
+}
+
+body, main, .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  flex-direction: column;
+  background: var(--container-color);
+  height: 33.75rem;
+  width: 70%;
+  margin: auto;
+  text-align: center;
+  position: relative;
+  border-radius: 2rem;
+}
+
+.content {
+  height: 100%;
+  position: relative;
+}
+
+/* Background Gradiente Linear do Cracha: */
+.footer {
+  position: absolute;
+  top: 0;
+  background: var(--gradient-color);
+  width: 100%;
+  height: 11rem;
+  border-radius: 2rem 2rem 0 0;
+}
+
+.footer p {
+  visibility: hidden;
+}
+
+/* Imagem de Perfil e Selo da Rocketseat: */
+.images {
+  position: relative;
+  top: 3.5rem;
+  width: fit-content;
+  margin: auto;
+}
+
+.images span {
+  position: absolute;
+  top: -1rem;
+  left: -2rem;
+  z-index: 1;
+  animation: rotate 20s linear infinite;
+}
+
+.images > img {
+  width: 10rem;
+  height: 11.5rem auto 0;
+  object-fit: cover;
+  clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
+}
+
+/* Título: */
+h1 {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 24px;
+  margin: 4.5rem 0 0.50rem;
+}
+
+/* Link para o Github: */
+.github {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease-in;
+}
+
+.github:hover {
+  opacity: 0.6;
+}
+
+.github img {
+  cursor: pointer;
+}
+
+/* Descrição Pessoal: */
+.container p {
+  margin-top: 1.5rem;
+  padding: 0 1rem;
+  font-size: 15px;
+}
+
+/* Redes Sociais: */
+ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin-top: 2rem;
+  gap: 0.75rem;
+}
+
+li img {
+  border-radius: 50%;
+  transition: all 0.3s ease-in;
+}
+
+li img:hover {
+  transform: scale(1.2);
+  margin-top: -1rem;
+  opacity: 0.5;
+}
+
+/* Suspensório do Crachá: */
+.design {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: -125px;
+}
+
+.suspensorio {
+  background: var(--gradient-color);
+  width: 64px;
+  height: 150px;
+  margin: auto;
+  z-index: 1;
+}
+
+.suspensorio p {
+  visibility: hidden;
+}
+
+.paleta {
+  width: 80px;
+  height: 8px;
+  margin: auto;
+  background: var(--body-color);
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.paleta p {
+  visibility: hidden;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsividade: */
+@media (max-width: 750px) {
+  main {
+    width: 100%;
+    position: relative;
+    top: 0;
+  }
+
+  .container {
+    width: 100%;
+    height: 100vh;
+    border-radius: 0;
+  }
+
+  .footer {
+    border-radius: 0;
+  }
+  
+  .design {
+    visibility: hidden;
+  }
+
+  .teste {
+    position: absolute;
+  }
+}
